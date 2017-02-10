@@ -6,6 +6,7 @@ using System.Collections;
 public class gameScript : MonoBehaviour {
     public Canvas gameCanvas;
     public Canvas escapeCanvas;
+	public Canvas optionsCanvas;
     public InputField chatInput;
            int brickQuantity  = 0;
            int goldQuantity   = 100;
@@ -31,8 +32,9 @@ public class gameScript : MonoBehaviour {
 
     void Awake()
     {
-		gameCanvas.enabled = true;
-		escapeCanvas.enabled = false;
+	    gameCanvas.enabled = true;
+	    escapeCanvas.enabled = false;
+		optionsCanvas.enabled = false;
     }
 
     void Update ()
@@ -186,4 +188,16 @@ public class gameScript : MonoBehaviour {
     {
         Application.Quit();
     }
+
+	public void showOptions()
+	{
+		escapeCanvas.enabled = false;
+		optionsCanvas.enabled = true;
+    }
+
+	public void hideOptions()
+	{
+		escapeCanvas.enabled = true;
+		optionsCanvas.enabled = false;
+	}
 }
