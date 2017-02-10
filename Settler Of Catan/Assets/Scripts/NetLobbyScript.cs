@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NetLobbyScript : MonoBehaviour {
     
     [System.Serializable]
-    public struct gameLobbyText
+    public struct netLobbyText
     {
         public Text gameNameText;
         public Text hostNameText;
@@ -15,7 +15,7 @@ public class NetLobbyScript : MonoBehaviour {
         public Text statusText;
     }
     
-    public struct gameLobbyValues
+    public struct netLobbyValues
     {  
         public int    numOfPlayers;
         public string hostName;  
@@ -24,8 +24,13 @@ public class NetLobbyScript : MonoBehaviour {
     }
 
     
-    public gameLobbyText[]   lobbyListText   = new gameLobbyText[40];
-    public gameLobbyValues[] lobbyListValues = new gameLobbyValues[40];
+    public IList<netLobbyText> netLobbyTextList = new List<netLobbyText>();
+    public IList<netLobbyValues> netLobbyValuesList = new List<netLobbyValues>();
+    
+    public void addNetLobbyValues()
+    {
+        netLobbyValuesList.Add(new netLobbyValues(){numOfPlayers = 6, hostName = "Ghost", gameName = "The Ender", status = "started"});
+    }
     
     public void createGame()
     {

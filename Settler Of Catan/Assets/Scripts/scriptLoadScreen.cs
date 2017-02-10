@@ -3,13 +3,12 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 
-
 public class scriptLoadScreen : MonoBehaviour {
 
 	// Use this for initialization
    void Start()
    {
-       UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+       UnityEngine.SceneManagement.SceneManager.LoadScene(2);
    }
 	
 	// Update is called once per frame

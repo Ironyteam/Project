@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class GameLobbyScript : MonoBehaviour {
 
+   public IList<string> playerNameList = new List<string>();
+   
+   public void addPlayers()
+   {
+       playerNameList.Add("John Rango");
+   }
+
    public void returnToMain()
    {
 	  UnityEngine.SceneManagement.SceneManager.LoadScene(0);
    }
    public void netLobbyOn()
    {
-	  UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+	  UnityEngine.SceneManagement.SceneManager.LoadScene(4);
    }
       public void startGame()
    {
-	  UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+	  UnityEngine.SceneManagement.SceneManager.LoadScene(3);
    }  
 }
