@@ -2,33 +2,41 @@
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
-public class gameScript : MonoBehaviour {
-    public Canvas gameCanvas;
-    public Canvas escapeCanvas;
-	public Canvas optionsCanvas;
+public class gameUIScript : MonoBehaviour {
+    public Canvas gameCanvas,
+   	              escapeCanvas,
+		          optionsCanvas,
+				  player1Canvas,
+				  player2Canvas,
+				  player3Canvas,
+				  player4Canvas,
+				  player5Canvas,
+				  player6Canvas;
     public InputField chatInput;
-           int brickQuantity  = 0;
-           int goldQuantity   = 100;
-           int oreQuantity    = 0;
-    public int randomNumber1;
-    public int randomNumber2;
-    public int randomNumberActual;
-           int sheepQuantity  = 0;
-           int tempEscPressed = 0; 
-           // Will be removed once i figure out how getKeyDown really works
-           int wheatQuantity  = 0;
-           int woodQuantity   = 0;
+           int brickQuantity  = 0,
+               goldQuantity   = 100,
+               oreQuantity    = 0,
+           	   sheepQuantity  = 0,
+           	   tempEscPressed = 0, 
+          	       // Will be removed once i figure out how getKeyDown really works
+           	   wheatQuantity  = 0,
+           	   woodQuantity   = 0;
+	public int numOfPlayers,
+    	       randomNumber1,
+    	       randomNumber2,
+    	       randomNumberActual;
            string player1Name = "GhostRag3: ";
     public System.Random randDiceObject = new System.Random();
-    public Text brickScore;
-    public Text chatBox;
-    public Text diceValue;
-    public Text goldScore;
-    public Text oreScore;
-    public Text sheepScore;
-    public Text wheatScore;
-    public Text woodScore;
+    public Text brickScore,
+    		    chatBox,
+    		    diceValue,
+                goldScore,
+    	        oreScore,
+    		    sheepScore,
+    	        wheatScore,
+    		    woodScore;
 
     void Awake()
     {
@@ -36,6 +44,16 @@ public class gameScript : MonoBehaviour {
 	    escapeCanvas.enabled = false;
 		optionsCanvas.enabled = false;
     }
+
+	void Start()
+	{
+		player1Canvas.enabled = false;
+		player2Canvas.enabled = false;
+		player3Canvas.enabled = false;
+		player4Canvas.enabled = false;
+		player5Canvas.enabled = false;
+		player6Canvas.enabled = false;
+	}
 
     void Update ()
     {
@@ -52,6 +70,52 @@ public class gameScript : MonoBehaviour {
                 tempEscPressed = 0;
             }
         }
+
+		if(numOfPlayers >= 1)
+		{
+			player1Canvas.enabled = true;
+			if(numOfPlayers >= 2)
+			{		
+				player2Canvas.enabled = true;
+				if(numOfPlayers >= 3)
+				{
+					player3Canvas.enabled = true;
+					if(numOfPlayers >=4)
+					{
+						player4Canvas.enabled = true;
+						if(numOfPlayers >=5)
+						{
+							player5Canvas.enabled = true;
+							if(numOfPlayers >=6)
+								player6Canvas.enabled = true;
+							else
+								player6Canvas.enabled = false;
+						}
+						else
+						{
+							player5Canvas.enabled = false;
+						}
+					}
+					else
+					{
+						player4Canvas.enabled = false;
+					}
+				}
+				else
+				{
+					player3Canvas.enabled = false;
+				}
+			}
+			else
+			{
+				player2Canvas.enabled = false;
+			}
+		}
+		else
+		{
+			player1Canvas.enabled = false;
+		}
+
     }
 
     public void moreWheat()
@@ -199,5 +263,19 @@ public class gameScript : MonoBehaviour {
 	{
 		escapeCanvas.enabled = true;
 		optionsCanvas.enabled = false;
+	}
+
+	public void addPlayers()
+	{
+		numOfPlayers++;
+				
+	}
+
+	public void removePlayers()
+	{
+		if(numOfPlayers > 0)
+		{
+			numOfPlayers--;
+		}
 	}
 }

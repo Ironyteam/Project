@@ -7,7 +7,7 @@ using System.Collections;
 public class MouseManager : MonoBehaviour {
 
     public AudioClip[] audioClip;
-    public gameScript gameScriptLink;
+    public gameUIScript gameScriptLink;
 	
 	// Update is called once per frame
 	void Update () {

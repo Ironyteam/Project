@@ -8,6 +8,7 @@ public class optionsMenu : MonoBehaviour {
 	public Dropdown resolutionSetting;
 	public Slider volumeControl;
 
+	// Changes quality settings
     public void qualityChange()
 	{
 		switch(qualitySetting.value)
@@ -31,6 +32,7 @@ public class optionsMenu : MonoBehaviour {
             QualitySettings.SetQualityLevel(0, true); */
     }
 
+	// Changes resolution settings
 	public void resolutionChange()
 	{
 		switch(resolutionSetting.value)
@@ -102,6 +104,7 @@ public class optionsMenu : MonoBehaviour {
          
 	}
 
+	// Changes sound settings
 	public void soundChange()
 	{
     	AudioListener.volume = volumeControl.value;
