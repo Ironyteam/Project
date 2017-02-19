@@ -11,6 +11,8 @@ public class NavigationScript : MonoBehaviour
     public Canvas optionsCanvas;
     public Canvas quitCanvas;
 
+    public gameScript BoardManagerLink;
+
     void Awake()
     {
        optionsCanvas.enabled = false;
@@ -35,6 +37,12 @@ public class NavigationScript : MonoBehaviour
        createCanvas.enabled  = true;
        creditCanvas.enabled  = false;
        quitCanvas.enabled    = false;
+    }
+
+    public void PreGameBoardSceneOn()
+    {
+        BoardManager.startingGame = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(5);
     }
 
     public void creditOn()
@@ -82,5 +90,10 @@ public class NavigationScript : MonoBehaviour
     public void gameLobbyOn()
     {
 	   UnityEngine.SceneManagement.SceneManager.LoadScene(5);
+    }
+
+    public void boardManagerOn()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(5);
     }
 }
