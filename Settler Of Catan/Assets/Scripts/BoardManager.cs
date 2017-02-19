@@ -59,8 +59,6 @@ public class BoardManager : MonoBehaviour
             preGameBoardSelectOn();
             startingGame = false;
         }
-
-      //  quitCanvas.enabled = false;
     }
 
     void Update()

@@ -14,8 +14,8 @@ public class FileHandler
 
     const int EOF = -1;
 
-    public const string DefaultMapsPath = "C:/Users/Ryan Archer/Desktop/DefaultMaps";
-    public const string SavedMapsPath = "C:/Users/Ryan Archer/Desktop/SavedMaps";
+    public const string DefaultMapsPath = "Assets/DefaultMaps";
+    public const string SavedMapsPath = "Assets/SavedMaps";
 
     // Consider Need for mapList file in default maps
     // ALSO consider that having the same name for a file in both folders could cause the wrong result
@@ -51,8 +51,6 @@ public class FileHandler
     public HexTemplate retrieveMap(string mapName)
     {
         HexTemplate template = new HexTemplate();
-        string[] defaultMaps = Directory.GetFiles(DefaultMapsPath);
-        string[] savedMaps = Directory.GetFiles(SavedMapsPath);
         int readChar = 0;
         string current = null;
         string next = null;
