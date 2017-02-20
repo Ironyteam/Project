@@ -79,17 +79,17 @@ public class NavigationScript : MonoBehaviour
 
     public void loadOn()
     {
- 	  UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+ 	  UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
     
     public void netLobbyOn()
     {
-	   UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+	   UnityEngine.SceneManagement.SceneManager.LoadScene(4);
     }
     
     public void gameLobbyOn()
     {
-	   UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+	   UnityEngine.SceneManagement.SceneManager.LoadScene(5);
     }
 
     public void boardManagerOn()
