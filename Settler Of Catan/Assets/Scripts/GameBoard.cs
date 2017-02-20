@@ -67,7 +67,7 @@ public class GameBoard : MonoBehaviour
                         template.hex[x, z].hex_go.GetComponentInChildren<Renderer>().material.color = Color.red;
                         break;
                     default:
-                        template.hex[x, z].hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, 0.0f, z * zOffset), Quaternion.identity); ;
+                        template.hex[x, z].hex_go = (GameObject)Instantiate(hexPrefab, new Vector3(xPos, -1.0f, z * zOffset), Quaternion.identity); ;
                         template.hex[x, z].hex_go.GetComponentInChildren<Renderer>().material.color = Color.blue;
                         break;
                 }
