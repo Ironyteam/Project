@@ -26,12 +26,13 @@ public class BoardManager : MonoBehaviour
     private int savedMapsStartindex;
     private int board_index;
 
+    private Text[] diceNumbers;
     public static bool startingGame = false;
 
     const int WIDTH = HexTemplate.WIDTH;
     const int HEIGHT = HexTemplate.HEIGHT;
 
-    const int LEFT = -1;
+    const int LEFT  = -1;
     const int RIGHT = -2;
 
     private string[] maps;
@@ -59,8 +60,6 @@ public class BoardManager : MonoBehaviour
             preGameBoardSelectOn();
             startingGame = false;
         }
-
-      //  quitCanvas.enabled = false;
     }
 
     void Update()
@@ -127,6 +126,7 @@ public class BoardManager : MonoBehaviour
     public void changeDiceNumber(int diceNum)
     {
         template.hex[current_hex_x, current_hex_y].setDiceNum(diceNum);
+        Debug.Log(template.hex[current_hex_x, current_hex_y].dice_number);
     }
 
     public void ChangeDisplayedMap(int desiredIndex)
